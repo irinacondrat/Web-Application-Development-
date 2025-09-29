@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solent Alumni | Login (Prototype)</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a href="#main" class="skiplink">Skip to content</a>
+  <header><div class="logo" aria-hidden="true">S</div><h1>Solent Alumni – Prototype</h1></header>
+  <main id="main" class="container">
+    <div class="grid grid-2">
+      <section class="card" aria-labelledby="signinTitle" aria-describedby="loginHelp">
+        <h2 id="signinTitle">Sign in</h2>
+        <form onsubmit="handleLogin(event)">
+          <div class="input"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="username" required></div>
+          <div class="input"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+          <p id="loginHelp">Demo only: credentials are not verified; your display name is stored locally to personalise the dashboard.</p>
+          <div style="display:flex;gap:.5rem;">
+            <button type="submit" class="btn">Sign in</button>
+            <button type="button" class="btn secondary" onclick="goto('dashboard.html')">Skip (prototype)</button>
+          </div>
+        </form>
+      </section>
+      <aside class="card">
+        <h2>About this prototype</h2>
+        <ul>
+          <li>Accessible: labels, keyboard focus, skip link, aria-live updates.</li>
+          <li>Two live flows: <strong>Update Details (wizard)</strong> and <strong>Events & Mentoring</strong>.</li>
+          <li>Built to address: long forms, deep navigation, low engagement.</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+  <footer>© Prototype for QHO542 – Human Computer Interaction</footer>
+</body>
+</html>

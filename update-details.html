@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Update Details – Wizard</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a href="#main" class="skiplink">Skip to content</a>
+  <header><div class="logo" aria-hidden="true">S</div><h1>Update Details – Multi-step Wizard</h1></header>
+  <main id="main" class="container">
+    <div class="card wizard" role="group" aria-labelledby="wizardTitle" aria-describedby="wizardDesc">
+      <h2 id="wizardTitle">Step-by-step form</h2>
+      <p id="wizardDesc">We’ve split the long form into small, focused steps to reduce cognitive load. <span class="badge" aria-live="polite" id="live">Step 1 of 4</span></p>
+      <div class="progress" aria-hidden="true"><div class="step"></div><div class="step"></div><div class="step"></div><div class="step"></div></div>
+      <form onsubmit="submitWizard(event)" novalidate>
+        <section class="wizard-step" aria-label="Personal details">
+          <fieldset><legend>Personal details</legend>
+            <div class="input"><label for="first">First name <span aria-hidden="true">*</span></label><input id="first" name="first" required autocomplete="given-name"></div>
+            <div class="input"><label for="last">Last name <span aria-hidden="true">*</span></label><input id="last" name="last" required autocomplete="family-name"></div>
+            <div class="input"><label for="dob">Date of birth</label><input id="dob" name="dob" type="date" autocomplete="bday"></div>
+          </fieldset>
+        </section>
+        <section class="wizard-step" aria-label="Contact">
+          <fieldset><legend>Contact</legend>
+            <div class="input"><label for="email2">Email <span aria-hidden="true">*</span></label><input id="email2" name="email" type="email" required autocomplete="email" placeholder="name@example.com"></div>
+            <div class="input"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+44 7xxx xxxxxx" pattern="^[+0-9 ()-]{7,}$"></div>
+            <div class="input"><label for="country">Country</label><input id="country" name="country" list="countries" autocomplete="country-name" placeholder="Start typing…"><datalist id="countries"><option>United Kingdom</option><option>Ireland</option><option>United States</option><option>Germany</option><option>France</option><option>Spain</option><option>Italy</option><option>India</option><option>Nigeria</option><option>China</option><option>Australia</option></datalist></div>
+          </fieldset>
+        </section>
+        <section class="wizard-step" aria-label="Employment">
+          <fieldset><legend>Employment (optional)</legend>
+            <div class="input"><label for="employer">Employer</label><input id="employer" name="employer" placeholder="Company name"></div>
+            <div class="input"><label for="role">Job title</label><input id="role" name="role" placeholder="e.g., UX Designer"></div>
+            <div class="input"><label for="sector">Sector</label><select id="sector" name="sector"><option value="">Select sector</option><option>Technology</option><option>Finance</option><option>Healthcare</option><option>Education</option><option>Creative Industries</option><option>Public Sector</option></select></div>
+          </fieldset>
+        </section>
+        <section class="wizard-step" aria-label="Subscriptions and consent">
+          <fieldset><legend>Subscriptions and consent</legend>
+            <div class="input"><label><input type="checkbox" id="news" name="news"> Subscribe to the alumni newsletter</label></div>
+            <div class="input"><label><input type="checkbox" id="consent" name="consent" required> I consent to Solent University processing my data in line with the <a href="#" rel="noopener">privacy policy</a>.</label></div>
+            <p style="margin-top:.25rem; color:#475569; font-size:.9rem;">You can withdraw consent at any time. Only necessary data is collected for alumni services.</p>
+          </fieldset>
+        </section>
+        <div style="display:flex; gap:.5rem; margin-top:.5rem">
+          <button id="prevBtn" type="button" class="btn secondary" onclick="prevStep()">Back</button>
+          <button id="nextBtn" type="button" class="btn" onclick="nextStep()">Next</button>
+          <button id="submitBtn" type="submit" class="btn" style="display:none">Submit</button>
+          <button type="button" class="btn secondary" onclick="goto('dashboard.html')" aria-label="Exit without submitting">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <p style="margin-top:1rem;"><a href="dashboard.html">← Back to dashboard</a></p>
+  </main>
+  <footer>© Prototype for QHO542</footer>
+</body>
+</html>

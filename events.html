@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solent Alumni | Events & Mentoring</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a href="#main" class="skiplink">Skip to content</a>
+  <header><div class="logo" aria-hidden="true">S</div><h1>Events &amp; Mentoring</h1></header>
+  <main id="main" class="container">
+    <form class="filterbar card" onsubmit="event.preventDefault()" aria-label="Event filters">
+      <div class="input"><label for="type">Type</label>
+        <select id="type"><option value="all">All</option><option value="networking">Networking</option><option value="talk">Career Talk</option><option value="mentoring">Mentoring</option></select>
+      </div>
+      <div class="input"><label for="mode">Mode</label>
+        <select id="mode"><option value="all">Any</option><option value="online">Online</option><option value="campus">On campus</option></select>
+      </div>
+      <div class="input"><label for="date">Date</label><input id="date" type="date"></div>
+      <button class="btn" type="button" onclick="alert('Filters applied (prototype)')">Apply</button>
+    </form>
+    <section class="cards" aria-label="Events list">
+      <article class="card"><h3>Alumni Networking Evening</h3><p><strong>Mode:</strong> On campus · <strong>Type:</strong> Networking · 24 Oct</p><button class="btn" onclick="alert('Registered! (prototype)')">Register</button></article>
+      <article class="card"><h3>Mentoring: Become a Mentor</h3><p><strong>Mode:</strong> Online · <strong>Type:</strong> Mentoring · Rolling</p><button class="btn" onclick="alert('Applied! (prototype)')">Apply</button></article>
+      <article class="card"><h3>Career Talk: UX in the Wild</h3><p><strong>Mode:</strong> Online · <strong>Type:</strong> Career Talk · 12 Nov</p><button class="btn" onclick="alert('Registered! (prototype)')">Register</button></article>
+    </section>
+  </main>
+  <footer>© Prototype for QHO542</footer>
+</body>
+</html>
